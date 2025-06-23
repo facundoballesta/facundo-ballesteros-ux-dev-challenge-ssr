@@ -1,10 +1,19 @@
-import { ChevronLeftIcon } from '@heroicons/react/24/solid';
+import { ChevronLeftIcon } from "@heroicons/react/24/solid";
+import style from "../sidebar.module.css";
+interface CollapseButtonProps {
+    collapsed: boolean;
+    onClick: () => void;
+}
 
-const CollapseButton = () => (
-  <button>
-    <span>Collapse</span>
-    <ChevronLeftIcon />
-  </button>
+const CollapseButton = ({ collapsed, onClick }: CollapseButtonProps) => (
+    <button
+        onClick={onClick}
+        aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+        className={style.collapseButton}
+    >
+        <span>{collapsed ? "" : "Collapse"}</span>
+        <ChevronLeftIcon style={{ transform: collapsed ? "rotate(180deg)" : "none", transition: "transform 0.2s" }} />
+    </button>
 );
 
 export default CollapseButton;
