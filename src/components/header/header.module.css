@@ -1,0 +1,28 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--neutral-gray-100);
+}
+
+.logo > img {
+    width: 32px;
+}
+.tools {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.user > p {
+    margin: 0;
+    font-weight: bold;
+}
