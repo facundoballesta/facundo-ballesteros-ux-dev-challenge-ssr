@@ -1,0 +1,128 @@
+.tableContainer {
+    border-radius: 16px;
+    border: 1px solid var(--neutral-gray-300);
+    border-radius: 24px;
+    border-width: 1px;
+    padding: 24px;
+    gap: 16px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.tableContainer > h2 {
+    margin: 0 0 4px 0;
+}
+.tableContainer > p {
+    margin: 0 0 16px 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 16px;
+    overflow-y: scroll;
+    text-align: start;
+}
+.table th {
+    padding: 16px;
+    color: var(--text);
+    font-weight: 500;
+    text-align: start;
+}
+.table td {
+    padding: 16px;
+    color: var(--text);
+}
+
+.statusSuccess {
+    background: var(--success);
+    color: var(--text);
+    padding: 2px 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.statusWarning {
+    background: var(--warning);
+    color: var(--text);
+    padding: 2px 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.statusError {
+    background: var(--error);
+    color: var(--text-contrast);
+    padding: 2px 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.statusDefault {
+    background: var(--neutral-gray-500);
+    color: var(--text-contrast);
+
+    padding: 2px 10px;
+    font-size: 0.9em;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.statusBadge {
+    border-radius: 9999px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+}
+
+.statusIcon {
+    width: 20px;
+    height: 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.customerCell {
+    font-weight: 700;
+}
+.customerEmail {
+    font-size: 0.85em;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.amountCell {
+    text-align: right;
+    width: 100%;
+    font-weight: 700;
+}
+
+thead {
+    border-bottom: 1px solid var(--neutral-gray-300);
+    position: sticky;
+    top: 0;
+    background: var(--neutral-gray-50);
+}
+
+.tableScroll {
+    overflow-y: auto;
+    max-height: 65vh;
+    width: 100%;
+}
