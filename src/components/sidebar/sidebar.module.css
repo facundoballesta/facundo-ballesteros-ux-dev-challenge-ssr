@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: space-between;
     padding: 24px 16px;
-    /* Nuevo: sidebar fijo a la izquierda */
     width: 220px;
     min-width: 180px;
     height: 100%;

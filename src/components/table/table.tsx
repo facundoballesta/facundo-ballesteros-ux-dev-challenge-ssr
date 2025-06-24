@@ -10,6 +10,7 @@ import {
 import styles from "./table.module.css";
 import StatusBadge from "./StatusBadge";
 import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/24/solid";
+import OrderDrawer from "./OrderDrawer";
 
 export type ProductStatusProps = "Approved" | "Pending" | "Rejected";
 
@@ -27,8 +28,6 @@ export type ProductProps = {
 type Props = {
     data: ProductProps[];
 };
-
-// Se elimina StatusBadge de este archivo, ahora se importa desde StatusBadge.tsx
 
 const defaultColumns: ColumnDef<ProductProps>[] = [
     {
@@ -67,8 +66,19 @@ const defaultColumns: ColumnDef<ProductProps>[] = [
 
 export const Table = ({ data }: Props) => {
     const [columns] = React.useState(() => [...defaultColumns]);
-
     const [sorting, setSorting] = React.useState<SortingState>([]);
+    const [drawerOpen, setDrawerOpen] = React.useState(false);
+    const [selectedOrder, setSelectedOrder] = React.useState<ProductProps | null>(null);
+
+    const handleRowClick = (order: ProductProps) => {
+        setSelectedOrder(order);
+        setDrawerOpen(true);
+    };
+
+    const handleDrawerClose = () => {
+        setDrawerOpen(false);
+        setSelectedOrder(null);
+    };
 
     const table = useReactTable({
         data,
@@ -129,7 +139,7 @@ export const Table = ({ data }: Props) => {
                     </thead>
                     <tbody>
                         {table.getRowModel().rows.map((row) => (
-                            <tr key={row.id}>
+                            <tr key={row.id} onClick={() => handleRowClick(row.original)} style={{ cursor: "pointer" }}>
                                 {row.getVisibleCells().map((cell) => (
                                     <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
                                 ))}
@@ -138,6 +148,7 @@ export const Table = ({ data }: Props) => {
                     </tbody>
                 </table>
             </div>
+            <OrderDrawer open={drawerOpen} onClose={handleDrawerClose} order={selectedOrder} />
         </div>
     );
 };

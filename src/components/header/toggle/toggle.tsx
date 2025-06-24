@@ -7,7 +7,6 @@ export const Toggle = () => {
     const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem("darkMode") === "true");
 
     useEffect(() => {
-        // Update document class and local storage when mode changes
         document.documentElement.classList.toggle("dark", isDarkMode);
         localStorage.setItem("darkMode", isDarkMode.toString());
     }, [isDarkMode]);

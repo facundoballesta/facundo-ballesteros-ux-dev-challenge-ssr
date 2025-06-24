@@ -8,7 +8,7 @@ interface NavButtonProps {
     className?: string;
 }
 
-export const NavButton = ({ to, icon, label, className }: NavButtonProps) => (
+export const NavButton = ({ to, icon, label }: NavButtonProps) => (
     <NavLink to={to} className={styles.navigation}>
         {icon}
         <span> {label}</span>

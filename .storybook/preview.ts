@@ -5,7 +5,7 @@ import '../src/layout.css';
 import '../src/ui.css';
 import '../src/index.css';
 
-// Sincroniza la clase 'dark' en el body del iframe de Storybook
+
 import { useEffect } from 'react';
 import type { Decorator } from '@storybook/react';
 
@@ -16,7 +16,6 @@ const DarkModeDecorator: Decorator = (Story, context) => {
       document.body.classList.toggle('dark', isDark);
     });
     observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-    // Inicializa
     const isDark = document.documentElement.classList.contains('dark');
     document.body.classList.toggle('dark', isDark);
     return () => observer.disconnect();
