@@ -71,6 +71,14 @@
     position: static;
     cursor: pointer;
 }
+
+.collapseButtonIcon {
+    transition: color 0.3s !important;
+}
+
+.collapseButtonIcon:hover {
+    color: var(--success) !important;
+}
 .collapsed {
     width: 48px !important;
     min-width: 48px !important;

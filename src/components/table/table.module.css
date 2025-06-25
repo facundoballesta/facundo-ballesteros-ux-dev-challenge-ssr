@@ -42,6 +42,11 @@
     color: var(--neutral-grey-800);
     font-weight: 500;
     text-align: start;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+.table th:hover {
+    color: var(--neutral-gray-600);
 }
 .table td {
     padding: 8px 0;
@@ -153,6 +158,14 @@ thead {
 
 .table tr:not(:last-child) {
     border-bottom: 1px solid var(--neutral-gray-200);
+}
+
+.tableRow {
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.tableRow:hover {
+    background: var(--neutral-gray-200);
 }
 
 @media (max-width: 600px) {

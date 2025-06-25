@@ -15,5 +15,11 @@
       border-bottom: 2px solid var(--success);
       font-weight: 700;
     }
+
+    &:hover {
+      color: var(--success);
+      border-bottom: 2px solid var(--success);
+      transition: color 0.2s, border-bottom 0.2s, background-color 0.2s;
+    }
   }
 }

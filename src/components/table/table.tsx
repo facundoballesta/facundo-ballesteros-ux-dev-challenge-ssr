@@ -175,7 +175,11 @@ export const Table = ({ data }: Props) => {
                     </thead>
                     <tbody>
                         {table.getRowModel().rows.map((row) => (
-                            <tr key={row.id} onClick={() => handleRowClick(row.original)} style={{ cursor: "pointer" }}>
+                            <tr
+                                key={row.id}
+                                onClick={() => handleRowClick(row.original)}
+                                className={styles.tableRow}
+                            >
                                 {row.getVisibleCells().map((cell) => (
                                     <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
                                 ))}
