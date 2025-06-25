@@ -4,7 +4,7 @@ import { CheckCircleIcon, ExclamationTriangleIcon, XMarkIcon } from '@heroicons/
 
 import type { ProductStatusProps } from "./table";
 
-const StatusBadge: React.FC<{ status: ProductStatusProps }> = ({ status }) => {
+const StatusBadge: React.FC<{ status: ProductStatusProps; iconOnly?: boolean }> = ({ status, iconOnly = false }) => {
   let className = "";
   let icon = null;
   switch (status) {
@@ -24,10 +24,11 @@ const StatusBadge: React.FC<{ status: ProductStatusProps }> = ({ status }) => {
       className = styles.statusDefault;
       icon = <span className={styles.statusIcon}>•</span>;
   }
+  const badgeClass = `${className} ${styles.statusBadge}${iconOnly ? ' ' + styles.statusIconOnly : ''}`;
   return (
-    <span className={className + ' ' + styles.statusBadge}>
+    <span className={badgeClass}>
       {icon}
-      <span>{status.toUpperCase()}</span>
+      {!iconOnly && <span className={styles.statusText}>{status.toUpperCase()}</span>}
     </span>
   );
 };

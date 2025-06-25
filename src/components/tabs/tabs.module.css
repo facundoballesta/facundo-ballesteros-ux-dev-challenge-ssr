@@ -1,6 +1,7 @@
 .tabs {
   list-style: none;
-  padding: 0 0 0.5rem;
+  padding: 0 0 8px 0;
+  margin-top: 0;
   display: flex;
   border-bottom: thin solid var(--neutral-gray-300);
 

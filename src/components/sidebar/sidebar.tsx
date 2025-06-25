@@ -11,6 +11,7 @@ export const Sidebar = () => {
 
     return (
         <nav className={clsx(styles.sidebar, collapsed && styles.collapsed)}>
+            <CollapseButton collapsed={collapsed} onClick={() => setCollapsed((c) => !c)} />
             {!collapsed && (
                 <ul>
                     <li>
@@ -21,7 +22,6 @@ export const Sidebar = () => {
                     </li>
                 </ul>
             )}
-            <CollapseButton collapsed={collapsed} onClick={() => setCollapsed((c) => !c)} />
         </nav>
     );
 };

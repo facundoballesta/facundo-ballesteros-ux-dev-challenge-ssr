@@ -1,9 +1,10 @@
 main {
-  background-color: var(--neutral-gray-50);
-  border-radius: 1.5rem;
-  border: 1px solid var(--neutral-gray-300);
-  display: grid;
-  grid-template-rows: auto 1fr;
-  overflow: hidden;
-  padding: 1.5rem;
+    background-color: var(--neutral-gray-50);
+    border-radius: 1.5rem;
+    border: 1px solid var(--neutral-gray-300);
+    display: flex;
+    flex-direction: column;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+    padding: 1.5rem;
 }

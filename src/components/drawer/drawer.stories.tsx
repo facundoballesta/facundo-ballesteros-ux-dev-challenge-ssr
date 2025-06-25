@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Drawer from "./drawer";
 import type { ProductStatusProps } from "../table/table";
 

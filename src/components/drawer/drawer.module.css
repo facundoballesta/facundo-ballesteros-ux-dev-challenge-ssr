@@ -27,10 +27,6 @@
     will-change: transform;
 }
 
-.drawer.open {
-    /* Esta clase es solo para debug o futuras mejoras */
-}
-
 .header {
     display: flex;
     flex-direction: column;

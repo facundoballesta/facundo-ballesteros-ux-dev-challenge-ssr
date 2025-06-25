@@ -111,7 +111,7 @@ const Drawer: React.FC<DrawerProps> = ({
                 >
                     <div className={styles.detailRow}>
                         <span>Status:</span>
-                        <StatusBadge status={status} />
+                        <StatusBadge status={status} iconOnly={false} />
                     </div>
                     <div className={styles.detailRow}>
                         <span>Date:</span>

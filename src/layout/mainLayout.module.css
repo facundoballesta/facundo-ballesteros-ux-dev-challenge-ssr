@@ -1,6 +1,7 @@
 .layoutContainer {
     display: flex;
     height: 100%;
+    padding-bottom: 24px;
 }
 
 @media (max-width: 900px) {
@@ -20,7 +21,4 @@
     .mainContent {
         padding: 16px 4vw;
     }
-}
-.app-container {
-    height: 100vh;
 }

@@ -64,7 +64,43 @@ const defaultColumns: ColumnDef<ProductProps>[] = [
     },
 ];
 
+const mobileColumns: ColumnDef<ProductProps>[] = [
+    {
+        header: "Customer",
+        accessorKey: "customer",
+        cell: ({ row }) => (
+            <span className={styles.customerCell}>{row.original.customer}</span>
+        ),
+    },
+    {
+        header: "Status",
+        accessorKey: "status",
+        cell: ({ getValue }) => <StatusBadge status={getValue() as ProductStatusProps} iconOnly />,
+    },
+    {
+        header: "Amount",
+        accessorKey: "amount",
+        cell: ({ getValue }) => (
+            <div className={styles.amountCell} style={{ textAlign: "right", width: "100%" }}>
+                {String(getValue())}
+            </div>
+        ),
+    },
+];
+
+function useIsMobile() {
+    const [isMobile, setIsMobile] = React.useState(false);
+    React.useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth <= 600);
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
+    return isMobile;
+}
+
 export const Table = ({ data }: Props) => {
+    const isMobile = useIsMobile();
     const [columns] = React.useState(() => [...defaultColumns]);
     const [sorting, setSorting] = React.useState<SortingState>([]);
     const [drawerOpen, setDrawerOpen] = React.useState(false);
@@ -82,7 +118,7 @@ export const Table = ({ data }: Props) => {
 
     const table = useReactTable({
         data,
-        columns,
+        columns: isMobile ? mobileColumns : columns,
         state: {
             sorting,
         },
@@ -93,8 +129,8 @@ export const Table = ({ data }: Props) => {
 
     return (
         <div className={styles.tableContainer}>
-            <h2>Transactions</h2>
-            <p>Recent transactions from your store.</p>
+            <h2 className={styles.sectionTitle}>Transactions</h2>
+            <p className={styles.sectionDescription}>Recent transactions from your store.</p>
             <div className={styles.tableScroll}>
                 <table className={styles.table}>
                     <thead>

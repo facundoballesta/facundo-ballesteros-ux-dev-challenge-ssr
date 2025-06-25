@@ -11,7 +11,7 @@ const CollapseButton = ({ collapsed, onClick }: CollapseButtonProps) => (
         aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         className={style.collapseButton}
     >
-        <span>{collapsed ? "" : "Collapse"}</span>
+        <span>{collapsed ? "" : ""}</span>
         <ChevronLeftIcon style={{ transform: collapsed ? "rotate(180deg)" : "none", transition: "transform 0.2s" }} />
     </button>
 );
