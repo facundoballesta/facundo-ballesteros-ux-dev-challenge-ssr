@@ -1,1 +1,3 @@
-export const Orders = () => <h1>Orders</h1>;
+import { EmptyPages } from "../components/emptyPages/emptyPages";
+
+export const Orders = () => <EmptyPages orders />;

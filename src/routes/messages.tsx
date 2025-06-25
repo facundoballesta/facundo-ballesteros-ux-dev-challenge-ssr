@@ -1,1 +1,3 @@
-export const Messages = () => <h1>Messages</h1>;
+import { EmptyPages } from "../components/emptyPages/emptyPages";
+
+export const Messages = () => <EmptyPages messages />;

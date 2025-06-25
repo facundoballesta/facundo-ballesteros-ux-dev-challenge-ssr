@@ -22,20 +22,7 @@ Your users should be able to:
 
 Upon delivery, please provide clear explanations of your decision-making process regarding the responsive design. Make sure to document your code as thoroughly as possible.
 
-## Where to Find Everything
-
-On the `Platform` page, you will find the `Dashboard` with the `Drawer` interaction and the empty state of the Order Tab.
-
-On the `Component` page, you will find the specific components, and in the `Foundation` section, you will see the color palette of the light and dark mode.
-
-## Some Tips
-
-1. Review the designs to start planning how to approach the project. This step is essential for organizing your CSS and components to enhance reusability.
-2. You can include any additional elements you consider necessary to support your solution.
-3. Pay close attention to detail.
-4. Remember that while JavaScript logic is still important, our main focus for this exercise is on styles and components and not paying attention to the business logic and the router. You can hard-code the data provided in `content.txt` into your components.
-5. Since we emphasize styles, please refrain from using Tailwind.
-6. Include all necessary accessibility labels to ensure all users can access the platform.
+# The project
 
 ## How to Run the Project
 
@@ -72,6 +59,8 @@ npm run storybook
 This will open Storybook at `http://localhost:6006`.
 
 ---
+
+# Components
 
 ## Drawer Component Documentation
 
