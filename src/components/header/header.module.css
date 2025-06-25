@@ -23,6 +23,7 @@
 }
 
 .user > p {
+    font-size: 12px;
     margin: 0;
-    font-weight: bold;
+    font-weight: 700;
 }
