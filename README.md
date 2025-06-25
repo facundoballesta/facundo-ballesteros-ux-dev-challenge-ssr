@@ -214,3 +214,29 @@ El componente `Card` muestra un resumen visual de un indicador clave (KPI) como 
 - Si no hay valor, muestra "-".
 
 ---
+
+## EmptyPages Component Documentation
+
+### Overview
+El componente `EmptyPages` muestra un estado vacío personalizado para las secciones de órdenes o mensajes, dependiendo de las props recibidas. Es útil para indicar al usuario que no hay datos disponibles en la sección seleccionada.
+
+### Props
+- **orders** (`boolean`, opcional): Si es `true`, muestra el estado vacío para órdenes.
+- **messages** (`boolean`, opcional): Si es `true`, muestra el estado vacío para mensajes.
+
+### Características
+- **Imágenes ilustrativas**: Muestra una imagen diferente según el tipo de estado vacío (órdenes o mensajes).
+- **Textos personalizados**: Cambia el título y subtítulo según la sección.
+- **Estilos**: Usa clases CSS para estilos visuales y responsivos.
+
+### Ejemplo de uso
+```tsx
+<EmptyPages orders />
+<EmptyPages messages />
+```
+
+### Notas
+- Si ninguna prop es `true`, el componente no renderiza nada.
+- Pensado para usarse en tabs o secciones donde puede no haber datos.
+
+---
