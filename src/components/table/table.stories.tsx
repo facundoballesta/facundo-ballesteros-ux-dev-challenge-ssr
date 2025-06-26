@@ -1,7 +1,6 @@
 import { Table, ProductProps } from "./table";
 import data from "../../data/data.json";
 
-// Definir el tipo del JSON importado
 interface DataJson {
     orders: ProductProps[];
 }

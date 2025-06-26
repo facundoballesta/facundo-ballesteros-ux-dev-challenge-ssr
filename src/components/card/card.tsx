@@ -13,11 +13,9 @@ interface CardProps {
 
 const getIcon = (result: CardResult) => {
     if (result === "positive") {
-        // Upward trending arrow (Heroicons)
         return <ArrowTrendingUpIcon className={styles.icon} style={{ color: "#4caf50" }} width={20} height={20} />;
     }
     if (result === "negative") {
-        // Downward trending arrow (Heroicons)
         return <ArrowTrendingDownIcon className={styles.icon} style={{ color: "#f44336" }} width={20} height={20} />;
     }
     return null;
