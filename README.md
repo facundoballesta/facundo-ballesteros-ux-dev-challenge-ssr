@@ -15,8 +15,8 @@ Your users should be able to:
 - View the optimal layout based on their device's screen size
 - See hover and focus states for all interactive elements on the page
 - Access more information about a specific transaction through a drawer
-- Access to the `SideBar` in the normal or collapsable view, also can access to the `Messages` section with the correct EmptyState.
-- View the `EmptyState` of the `Order` Tab and ability to switch between tabs
+- Access the `SideBar` in normal or collapsible view, and also access the `Messages` section with the correct EmptyState.
+- View the `EmptyState` of the `Order` Tab and switch between tabs
 
 ### Documentation and Delivery
 
@@ -114,28 +114,28 @@ The `Drawer` component is a reusable side panel designed to display detailed inf
 ## Table Component Documentation
 
 ### Overview
-El componente `Table` muestra una tabla responsiva de transacciones recientes, permitiendo ordenar columnas y ver detalles de cada transacción mediante un Drawer. Está optimizado para desktop y mobile, mostrando menos columnas en pantallas pequeñas.
+The `Table` component displays a responsive table of recent transactions, allowing column sorting and viewing details of each transaction via a Drawer. It is optimized for desktop and mobile, showing fewer columns on small screens.
 
 ### Props
-- **data** (`ProductProps[]`): Arreglo de objetos con la información de las transacciones a mostrar.
+- **data** (`ProductProps[]`): Array of objects with the transaction information to display.
 
 #### `ProductProps`
-- `id`: `number` — ID de la transacción.
-- `customer`: `string` — Nombre del cliente.
-- `date`: `string` — Fecha de la transacción.
-- `product`: `string` — Nombre del producto.
-- `status`: `"Approved" | "Pending" | "Rejected"` — Estado de la transacción.
-- `email`: `string` — Email del cliente.
-- `amount`: `string` — Monto de la transacción.
-- `paymentMethod`: `string` — Método de pago.
+- `id`: `number` — Transaction ID.
+- `customer`: `string` — Customer name.
+- `date`: `string` — Transaction date.
+- `product`: `string` — Product name.
+- `status`: `"Approved" | "Pending" | "Rejected"` — Transaction status.
+- `email`: `string` — Customer email.
+- `amount`: `string` — Transaction amount.
+- `paymentMethod`: `string` — Payment method.
 
-### Características
-- **Responsive**: Cambia el número de columnas según el tamaño de pantalla.
-- **Ordenamiento**: Permite ordenar por cualquier columna haciendo click en el encabezado.
-- **Drawer de Detalle**: Al hacer click en una fila, se abre un Drawer con los detalles de la transacción.
-- **Accesibilidad**: Uso de roles y atributos para mejorar la experiencia de usuarios con tecnologías asistivas.
+### Features
+- **Responsive**: Changes the number of columns based on screen size.
+- **Sorting**: Allows sorting by any column by clicking the header.
+- **Detail Drawer**: Clicking a row opens a Drawer with transaction details.
+- **Accessibility**: Uses roles and attributes to improve the experience for users with assistive technologies.
 
-### Ejemplo de uso
+### Example Usage
 ```tsx
 <Table data={transactionsArray} />
 ```
@@ -145,13 +145,13 @@ El componente `Table` muestra una tabla responsiva de transacciones recientes, p
 ## StatusBadge Component
 
 ### Overview
-`StatusBadge` es un componente visual que muestra el estado de una transacción con un color e ícono distintivo.
+`StatusBadge` is a visual component that displays the status of a transaction with a distinctive color and icon.
 
 ### Props
-- **status** (`"Approved" | "Pending" | "Rejected"`): Estado a mostrar.
-- **iconOnly** (`boolean`, opcional): Si es `true`, solo muestra el ícono (usado en mobile).
+- **status** (`"Approved" | "Pending" | "Rejected"`): Status to display.
+- **iconOnly** (`boolean`, optional): If `true`, only shows the icon (used on mobile).
 
-### Ejemplo de uso
+### Example Usage
 ```tsx
 <StatusBadge status="Approved" />
 <StatusBadge status="Pending" iconOnly />
@@ -162,44 +162,44 @@ El componente `Table` muestra una tabla responsiva de transacciones recientes, p
 ## Sidebar Component Documentation
 
 ### Overview
-El componente `Sidebar` es una barra de navegación lateral que permite acceder rápidamente a las secciones principales de la aplicación. Incluye un modo colapsable para optimizar el espacio en pantallas pequeñas o cuando el usuario lo desee.
+The `Sidebar` component is a side navigation bar that allows quick access to the main sections of the application. It includes a collapsible mode to optimize space on small screens or when the user desires.
 
-### Características
-- **Colapsable**: El usuario puede contraer o expandir la barra lateral usando el botón de colapso.
-- **Navegación**: Incluye botones de navegación (`NavButton`) para ir a Home y Messages, cada uno con su respectivo ícono.
-- **Accesibilidad**: Los botones tienen etiquetas y roles apropiados para facilitar la navegación con tecnologías asistivas.
-- **Estilos**: Usa clases condicionales para aplicar estilos diferentes en modo colapsado o expandido.
+### Features
+- **Collapsible**: The user can collapse or expand the sidebar using the collapse button.
+- **Navigation**: Includes navigation buttons (`NavButton`) to go to Home and Messages, each with its respective icon.
+- **Accessibility**: Buttons have appropriate labels and roles to facilitate navigation with assistive technologies.
+- **Styles**: Uses conditional classes to apply different styles in collapsed or expanded mode.
 
-### Ejemplo de uso
+### Example Usage
 ```tsx
 <Sidebar />
 ```
 
-### Notas
-- El estado de colapso se maneja internamente con `useState`.
-- El componente `CollapseButton` alterna el estado de la barra lateral.
-- Los íconos provienen de `@heroicons/react`.
+### Notes
+- The collapse state is managed internally with `useState`.
+- The `CollapseButton` component toggles the sidebar state.
+- Icons come from `@heroicons/react`.
 
 ---
 
 ## Card Component Documentation
 
 ### Overview
-El componente `Card` muestra un resumen visual de un indicador clave (KPI) como ventas, ingresos o usuarios activos. Incluye el valor actual, una comparación histórica y un ícono que indica si la tendencia es positiva o negativa.
+The `Card` component displays a visual summary of a key performance indicator (KPI) such as sales, revenue, or active users. It includes the current value, a historical comparison, and an icon indicating whether the trend is positive or negative.
 
 ### Props
-- **title** (`string`): Título del indicador (ejemplo: "Sales", "Revenue").
-- **value** (`string`): Valor actual del indicador.
-- **historicalAmount** (`string`): Valor histórico para comparación (ejemplo: "+5%", "-2 ventas").
-- **result** (`"positive" | "negative" | null`): Indica si la tendencia es positiva, negativa o neutra. Cambia el color del borde y el ícono.
+- **title** (`string`): Title of the indicator (e.g., "Sales", "Revenue").
+- **value** (`string`): Current value of the indicator.
+- **historicalAmount** (`string`): Historical value for comparison (e.g., "+5%", "-2 sales").
+- **result** (`"positive" | "negative" | null`): Indicates if the trend is positive, negative, or neutral. Changes the border color and icon.
 
-### Características
-- **Íconos de tendencia**: Flecha hacia arriba (verde) para positivo, flecha hacia abajo (rojo) para negativo.
-- **Colores**: El borde y el valor cambian de color según la tendencia.
-- **Accesibilidad**: El contenido textual es claro y los íconos tienen contraste adecuado.
-- **Estilos**: Usa clases CSS para estilos visuales y responsivos.
+### Features
+- **Trend Icons**: Up arrow (green) for positive, down arrow (red) for negative.
+- **Colors**: Border and value change color according to the trend.
+- **Accessibility**: Text content is clear and icons have adequate contrast.
+- **Styles**: Uses CSS classes for visual and responsive styles.
 
-### Ejemplo de uso
+### Example Usage
 ```tsx
 <Card
   title="Sales"
@@ -209,34 +209,34 @@ El componente `Card` muestra un resumen visual de un indicador clave (KPI) como 
 />
 ```
 
-### Notas
-- Si el título es "Active Now", el texto histórico muestra "since last hour".
-- Si no hay valor, muestra "-".
+### Notes
+- If the title is "Active Now", the historical text shows "since last hour".
+- If there is no value, it shows "-".
 
 ---
 
 ## EmptyPages Component Documentation
 
 ### Overview
-El componente `EmptyPages` muestra un estado vacío personalizado para las secciones de órdenes o mensajes, dependiendo de las props recibidas. Es útil para indicar al usuario que no hay datos disponibles en la sección seleccionada.
+The `EmptyPages` component displays a custom empty state for the orders or messages sections, depending on the received props. It is useful to indicate to the user that there is no data available in the selected section.
 
 ### Props
-- **orders** (`boolean`, opcional): Si es `true`, muestra el estado vacío para órdenes.
-- **messages** (`boolean`, opcional): Si es `true`, muestra el estado vacío para mensajes.
+- **orders** (`boolean`, optional): If `true`, shows the empty state for orders.
+- **messages** (`boolean`, optional): If `true`, shows the empty state for messages.
 
-### Características
-- **Imágenes ilustrativas**: Muestra una imagen diferente según el tipo de estado vacío (órdenes o mensajes).
-- **Textos personalizados**: Cambia el título y subtítulo según la sección.
-- **Estilos**: Usa clases CSS para estilos visuales y responsivos.
+### Features
+- **Illustrative Images**: Shows a different image depending on the type of empty state (orders or messages).
+- **Custom Texts**: Changes the title and subtitle according to the section.
+- **Styles**: Uses CSS classes for visual and responsive styles.
 
-### Ejemplo de uso
+### Example Usage
 ```tsx
 <EmptyPages orders />
 <EmptyPages messages />
 ```
 
-### Notas
-- Si ninguna prop es `true`, el componente no renderiza nada.
-- Pensado para usarse en tabs o secciones donde puede no haber datos.
+### Notes
+- If neither prop is `true`, the component renders nothing.
+- Intended for use in tabs or sections where there may be no data.
 
 ---
